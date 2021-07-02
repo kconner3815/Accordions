@@ -1,0 +1,50 @@
+
+
+$('.accordion-wrap').find('h3').click(function(){
+    $(this).next().slideToggle('slow');$(this).toggleClass('close');
+    $(".accordion-wrap .accordion-content").not($(this).next()).slideUp('slow');
+    $(".accordion-wrap h3").not($(this)).removeClass('close');
+});
+
+<div class="accordion-wrap">
+    <h3>This is a title heading</h3>
+    <div class="accordion-content">
+        This is content that is hidden, until the heading is clicked on.
+    </div>
+    <h3>This is a title heading</h3>
+    <div class="accordion-content">
+        This is content that is hidden, until the heading is clicked on.
+    </div>
+</div>
+
+
+#content .accordion-wrap h3 {
+  cursor: pointer;
+  width: 100%;
+  /*border-bottom: 3px solid #337291;*/
+  margin-bottom: 0;
+  padding: 10px 15px 9px 11px;
+  line-height: 1.3em;
+  margin-top: 15px;
+  background: #e2e2e2;
+  color: #3d3a38;
+  font-size: 1.1em;
+  font-weight: normal;
+}
+.accordion-wrap h3:after {
+  content: '\f067';
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  float: right;
+  padding-right: 0;
+  margin-bottom: 5px;
+}
+.accordion-wrap h3.close:after {
+  content: '\f068';
+}
+.accordion-content, #accordion p {
+    display: none;
+    margin: 0;
+    background: #eaeaea;
+    padding: 15px;
+}
